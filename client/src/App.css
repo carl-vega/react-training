@@ -1,0 +1,66 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.client-list {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background: lightgreen;
+  padding: 10px;
+}
+
+th,
+td {
+  border: 1px solid grey;
+}
+
+.add-client {
+  margin: 20px 0;
+}
+
+:is(.add-client, .add-product) input {
+  height: 34px;
+}
+:is(.add-client, .add-product) :is(button, select) {
+  margin: 0 4px;
+  padding: 0;
+  height: 40px;
+}
+.todo-title {
+  background-color: coral;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 0;
+}
+.todo-container {
+  width: fit-content;
+  display: grid;
+  gap: 10px;
+  margin: 0 42%;
+}
+.selected {
+  background-color: cadetblue;
+}
+button {
+  height: 40px;
+}
+input {
+  height: 34px;
+}
