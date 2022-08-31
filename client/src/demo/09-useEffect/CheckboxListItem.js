@@ -4,6 +4,7 @@ export default function CheckboxListItem({ defaultChecked, handleChange, checked
     return (
         <li>
             <input type="checkbox"
+                style={{ height: '12px' }}
                 defaultChecked={defaultChecked}
                 checked={checked}
                 onChange={handleChange}

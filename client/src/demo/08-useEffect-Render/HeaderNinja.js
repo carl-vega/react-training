@@ -10,6 +10,9 @@ export default function HeaderNinja() {
     }, [])
     useEffect(() => {
         console.log("another useEffect ninja")
+        return (() => {
+            console.log("re-render useEffect ninja")
+        })
     }, [rando])
 
     return (

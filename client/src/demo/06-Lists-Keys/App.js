@@ -21,7 +21,7 @@ function App() {
   })[switcher]
   return (
     <div className="App">
-      {createRadioList()}
+      {Object.entries(titleSwitch).map(([_, value]) => (<RadioInput key={value} title={value} checked={switcher === value} setSwitcher={setSwitcher} />))}
       {handleSwitch(switcher)}
     </div>
   );

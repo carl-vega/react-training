@@ -8,16 +8,25 @@ const ASTRONAUT = 'astronaut'
 
 
 function App() {
-  const [switcher, setSwitcher] = useState(KNIGHT);
+  const [switcher, setSwitcher] = useState({
+    [KNIGHT]: true,
+    [NINJA]: false,
+    [ASTRONAUT]: false
+  });
+  const [currentSelection, setCurrentSelection] = useState(KNIGHT)
+  const handleInputSwitch = (title) => {
+    setSwitcher(prevSelection => ({ ...prevSelection, [currentSelection]: false, [title]: true }))
+    setCurrentSelection(title)
+  }
 
   return (
     <div className="App">
-      <RadioInput title={KNIGHT} checked={switcher === KNIGHT} setSwitcher={setSwitcher} />
-      <RadioInput title={NINJA} checked={switcher === NINJA} setSwitcher={setSwitcher} />
-      <RadioInput title={ASTRONAUT} checked={switcher === ASTRONAUT} setSwitcher={setSwitcher} />
+      <RadioInput title={KNIGHT} checked={switcher[KNIGHT]} handleChange={handleInputSwitch} />
+      <RadioInput title={NINJA} checked={switcher[NINJA]} handleChange={handleInputSwitch} />
+      <RadioInput title={ASTRONAUT} checked={switcher[ASTRONAUT]} handleChange={handleInputSwitch} />
       {
-        switcher === "knight" ? <Header name="Knight"><span style={{ fontSize: "100px" }}>♞</span></Header> :
-          switcher === "ninja" ? <Header name="Ninja"><span style={{ fontSize: "100px" }}>🥷🏻</span></Header> : <Header name="Astronaut" ><span style={{ fontSize: "100px" }}>👨🏻‍🚀</span></Header>
+        switcher[KNIGHT] ? <Header name="Knight"><span style={{ fontSize: "100px" }}>♞</span></Header> :
+          switcher[NINJA] ? <Header name="Ninja"><span style={{ fontSize: "100px" }}>🥷🏻</span></Header> : <Header name="Astronaut" ><span style={{ fontSize: "100px" }}>👨🏻‍🚀</span></Header>
       }
     </div>
   );

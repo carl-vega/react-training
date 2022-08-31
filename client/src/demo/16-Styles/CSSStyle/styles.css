@@ -1,0 +1,11 @@
+.styles {
+  width: fit-content;
+  background-color: coral;
+  font-size: 100px;
+  font-family: Monoton;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.styles:hover {
+  background-color: cadetblue;
+}

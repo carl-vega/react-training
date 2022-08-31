@@ -6,7 +6,6 @@ const DEFAULT_GENDER = 'female'
 function App() {
   const [users, setUsers] = useState([]);
   const [checkedValue, setCheckedValue] = useState({});
-  // const [rando, setRando] = useState("")
 
   useEffect(() => {
     (async () => {
@@ -17,12 +16,8 @@ function App() {
       results.filter(({ gender }) => gender === DEFAULT_GENDER).forEach(({ login: { uuid } }) => ((temporaryObject = { ...temporaryObject, [uuid]: true })))
       setCheckedValue({ ...temporaryObject })
       setUsers(results)
-      // return () => {
-
-      // }
     })()
   }, [])
-
 
   const handleChange = (event) => {
     const { target: { name, checked } } = event;

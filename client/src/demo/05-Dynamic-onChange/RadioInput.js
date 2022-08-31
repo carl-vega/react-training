@@ -1,13 +1,9 @@
 
-export default function RadioInput({ title, checked, setSwitcher }) {
+export default function RadioInput({ title, checked, handleChange }) {
     console.log(title)
-
-    const handleInputSwitch = () => {
-        setSwitcher(title)
-    }
     return (
         <div>
-            <input type="radio" id={title} checked={checked} onChange={() => setSwitcher(title)} />
+            <input type="radio" id={title} checked={checked} onChange={() => handleChange(title)} />
             <label style={{ textTransform: "capitalize" }} htmlFor={title}>{title}</label>
         </div>
     )

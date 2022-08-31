@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import { useState } from 'react'
 import '../../App.css';
 const randomCount = (num) => { console.log("random"); return Math.floor(Math.random() * num) }
 const random = 7;
 import Header from "./Header"
 export default function App() {
-  // const [stateValue, stateSetter] = useState(initialValue)
   // const myNum = randomCount(random)
   const [test, setTest] = useState(() => {
     const initialState = randomCount(random);
