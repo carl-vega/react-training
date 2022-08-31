@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import '../../App.css';
 import CheckboxListItem from './CheckboxListItem';
 
@@ -44,7 +44,7 @@ function App() {
       </div>
       <div style={{ margin: '20px 15%', textAlign: 'start', border: '1px solid #cdcdcd', }} >
         <ul style={{ listStyle: "none" }}>
-          {Object.keys(checkedValue).length !== 0 ? Object.entries(checkedValue).filter(([_, value]) => (value)).map(([key]) => <li key={key}>{findUserName(key)}</li>) : <li>Add some besties</li>}
+          {false ? Object.entries(checkedValue).filter(([_, value]) => (value)).map(([key]) => <li key={key}>{findUserName(key)}</li>) : <li>Add some besties</li>}
         </ul>
       </div>
     </div>

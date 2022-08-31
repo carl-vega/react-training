@@ -16,7 +16,6 @@ import Teams from './Teams';
 ^ Add one new route and add one new nested route
 ^ Go to Team.js and add useParams hook to pull 
 ^ in team number and display it on the page
-
 */
 export default function App() {
     return (
@@ -52,7 +51,7 @@ function Layout() {
     }
     return (
         <div>
-            <h1>Welcome to the app!</h1>
+            <h1 style={{ width: '100%', display: 'grid', gridAutoFlow: 'column', justifyItems: 'center' }}>Welcome to the app!</h1>
             <nav style={{ width: '100%', display: 'grid', gridAutoFlow: 'column', justifyItems: 'center' }}>
                 <Link to="/">Home</Link>
                 <Link to="teams">Teams</Link>
