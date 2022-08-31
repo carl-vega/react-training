@@ -12,7 +12,12 @@ import LeagueStandings from './LeagueStandings';
 import NewTeamForm from './NewTeamForm';
 import Team from './Team';
 import Teams from './Teams';
+/* 
+^ Add one new route and add one new nested route
+^ Go to Team.js and add useParams hook to pull 
+^ in team number and display it on the page
 
+*/
 export default function App() {
     return (
         <BrowserRouter>
