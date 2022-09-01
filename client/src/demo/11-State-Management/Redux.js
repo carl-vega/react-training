@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { UPDATE_COLOR } from './Redux/actions';
-export default function Redux() {
+import { Provider } from 'react-redux';
+import store from './Redux/store';
+function ReduxConsumer() {
     const dispatch = useDispatch();
     const state = useSelector((state) => state);
     const { redux } = state;
@@ -12,6 +14,7 @@ export default function Redux() {
         });
     }
     return (
+
         <div style={{ display: 'grid', justifyItems: 'center' }}>
             <h2>Redux</h2>
             <div>
@@ -24,5 +27,13 @@ export default function Redux() {
                     onChange={handleColorChange} />
             </div>
         </div>
+
+    )
+}
+export default function Redux() {
+    return (
+        <Provider store={store}>
+            <ReduxConsumer />
+        </Provider>
     )
 }

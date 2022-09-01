@@ -1,22 +1,11 @@
-import { useReducer } from 'react';
 // Import type variables
-import { UPDATE_COLOR } from './Context/actions';
-
-// Import reducer from our Context folder
-import reducer from './Context/reducers';
-
 import { useColorContext } from './Context/ColorContext';
 
 export default function Context() {
-    const initialState = useColorContext();
+    const { context, setContext } = useColorContext();
     // Initialize `useReducer` hook. Returns state and a dispatch function. Accepts arguments of our reducer and initial state
-    const [state, dispatch] = useReducer(reducer, initialState);
-    const { context } = state;
     const handleColorChange = ({ target: { value } }) => {
-        dispatch({
-            type: UPDATE_COLOR,
-            payload: { context: value }
-        });
+        setContext(value)
     }
     return (
         <div style={{ display: 'grid', justifyItems: 'center' }}>

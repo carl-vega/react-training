@@ -12,6 +12,8 @@ import LeagueStandings from './LeagueStandings';
 import NewTeamForm from './NewTeamForm';
 import Team from './Team';
 import Teams from './Teams';
+import Taco from './Taco';
+import Tofu from './Tofu';
 /* 
 ^ Add one new route and add one new nested route
 ^ Go to Team.js and add useParams hook to pull 
@@ -22,7 +24,11 @@ export default function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Layout />}>
+                    <Route index element={<Team />} />
                     <Route index element={<Home />} />
+                    <Route path='taco' element={<Taco />} >
+                        <Route path='tofu' element={<Tofu />} />
+                    </Route>
                     <Route path="teams" element={<Teams />}>
                         <Route path=":teamId" element={<Team />} />
                         <Route path="new" element={<NewTeamForm />} />
@@ -55,6 +61,7 @@ function Layout() {
             <nav style={{ width: '100%', display: 'grid', gridAutoFlow: 'column', justifyItems: 'center' }}>
                 <Link to="/">Home</Link>
                 <Link to="teams">Teams</Link>
+                <Link to="taco/tofu">Tofu Taco</Link>
                 {teamNum ? <Link to={`teams/${teamNum}`}>TeamID</Link> :
                     <input type='text' style={styles} value={teamNum} placeHolder="Enter team number" onChange={handleTeamChange} />
                 }

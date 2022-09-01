@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import { BrowserRouter } from "react-router-dom";
 import './index.css';
 // import App from './demo/01-Stateless-Stateful/App';
 // import App from './demo/01-Stateless-Stateful/App';
@@ -12,9 +11,15 @@ import './index.css';
 // import App from './demo/07-Lifting-State-Up/App';
 // import App from './demo/08-useEffect/App';
 // import App from './demo/09-useEffect/App';
-import App from './demo/10-React-Router/App';
+// import App from './demo/10-React-Router/App';
 // import App from './demo/11-State-Management/App'
-// import App from './demo/12-Style/App';
+// import App from './demo/12-useContext/App';
+// import App from './demo/13-MUI-useTheme/App';
+// import App from './demo/14-Activity-2/App';
+// import App from './demo/15-Styles/App';
+// import App from './demo/16-Forms/App';
+import App from './demo/17-Dialogs/App';
+
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
